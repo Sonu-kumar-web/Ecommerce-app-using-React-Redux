@@ -5,6 +5,7 @@ body {
       "Helvetica Neue", sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+   background-color: rgb(233, 231, 231);
 }
 
 code {
@@ -33,8 +34,8 @@ span.stars span {
    display: flex;
    justify-content: space-between;
    padding: 15px;
-   margin: 8px 2px;
-
+   margin: 4px 2px;
+   background-color: white;
    box-sizing: border-box;
 }
 
@@ -112,7 +113,7 @@ span.stars span {
    height: 80%;
    width: 30%;
    margin: auto;
-   border: 1px solid black;
+   border: 1px solid grey;
    background-color: whitesmoke;
    padding: 10px;
 }
@@ -254,7 +255,6 @@ a sup {
 .details {
    display: flex;
    width: 100%;
-   /* justify-content: space-around; */
    margin: auto;
    min-height: 50%;
 
@@ -299,7 +299,7 @@ a sup {
 .product {
    display: flex;
    flex-direction: column;
-   border: 1px inset black;
+   border: 1px inset grey;
    width: 50%;
    margin: auto;
 }
