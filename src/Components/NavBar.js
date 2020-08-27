@@ -20,7 +20,7 @@ class NavBar extends React.Component {
                <Link to="/Ecommerce-app-using-React-Redux/cart">
                   <div className="nav-link">
                      <img
-                        src="https://image.flaticon.com/icons/svg/1170/1170678.svg"
+                        src="https://image.flaticon.com/icons/svg/1170/1170576.svg"
                         alt="Cart"
                      ></img>
                      <sup>{this.props.cartQty}</sup>
