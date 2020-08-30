@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-/**
- * Navigate to respective routes
- */
+
+// Navigate to respective routes
 class NavBar extends React.Component {
    render() {
       return (
