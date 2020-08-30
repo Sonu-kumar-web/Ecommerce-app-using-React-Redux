@@ -16,12 +16,15 @@ class Products extends React.Component {
    saveHandler = (product) => {
       this.props.dispatch(UPDATE_PRODUCT(product));
    };
+
    sortHandler = () => {
       this.props.dispatch(SORT());
    };
+
    reset = () => {
       this.props.dispatch(RESET());
    };
+
    render() {
       const { products } = this.props.products;
       return (
