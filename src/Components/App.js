@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Products from "./Products";
-import Add_Products from "./Add_Products";
+import AddProducts from "./Add_Products";
 import Cart from "./Cart";
 import APIUrls from "../helper/APIUrls";
 import { connect } from "react-redux";
@@ -39,7 +39,7 @@ class App extends React.Component {
                         exact
                         path="/Ecommerce-app-using-React-Redux/Add-Product"
                      >
-                        <Add_Products />
+                        <AddProducts />
                      </Route>
                      <Route exact path="/Ecommerce-app-using-React-Redux/cart">
                         <Cart></Cart>

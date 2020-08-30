@@ -53,7 +53,7 @@ function DELETE_PRODUCT(product) {
             },
             body: JSON.stringify(product),
          };
-         let json = await fetch(
+         await fetch(
             APIUrls.delete_products + "/" + product.id,
             options
          ).then((response) => response.json());

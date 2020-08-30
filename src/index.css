@@ -311,3 +311,10 @@ a sup {
    background-color: orange;
    border-radius: 10px;
 }
+
+.add_products {
+   height: 30px;
+   width: 100px;
+   cursor: pointer;
+   background-color: orange;
+}

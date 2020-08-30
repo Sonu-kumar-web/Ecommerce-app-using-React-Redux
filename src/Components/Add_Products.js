@@ -60,7 +60,12 @@ class Add_Products extends React.Component {
                <label for="description">Description</label>
                <textarea ref={this.descriptionRef} rows="2" id="description" />
             </div>
-            <input type="submit" value="Add Product" id="add" />
+            <input
+               type="submit"
+               value="Add Product"
+               id="add"
+               className="add_products"
+            />
          </form>
       );
    }
