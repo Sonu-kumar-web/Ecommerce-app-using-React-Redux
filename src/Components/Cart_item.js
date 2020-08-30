@@ -8,25 +8,27 @@ import {
    UPDATE_PRODUCT,
 } from "../actions/ProductsAction";
 class Cart_item extends React.Component {
-   /**
-    * handle qty change
-    */
+   // handle qty change
    changeHandler = (e) => {
       if (e.target.value < 0) e.target.value = 0;
       this.props.dispatch(UPDATE_QTY(e.target.value, this.props.cart));
    };
+
    // increment qty
    increment = (e) => {
       this.props.dispatch(UPDATE_QTY(1, this.props.cart));
    };
+
    //decrement qty
    decrement = (e) => {
       this.props.dispatch(UPDATE_QTY(-1, this.props.cart));
    };
-   //delete itsm
+
+   //delete item
    deleteHandler = (e) => {
       this.props.dispatch(DELETE_CART_PRODUCT(this.props.cart.id));
    };
+
    //make product changes
    saveHandler = (product) => {
       this.props.dispatch(UPDATE_PRODUCT(product));
