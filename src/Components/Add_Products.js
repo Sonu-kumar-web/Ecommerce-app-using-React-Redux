@@ -10,6 +10,7 @@ class Add_Products extends React.Component {
       this.ratingRef = createRef();
       this.descriptionRef = createRef();
    }
+
    // add product to db
    addProduct = (e) => {
       e.preventDefault();

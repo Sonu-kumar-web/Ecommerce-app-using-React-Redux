@@ -8,9 +8,7 @@ import APIUrls from "../helper/APIUrls";
 import { connect } from "react-redux";
 import { setProducts } from "../actions/ProductsAction";
 import ProductPage from "./ProductPage";
-/**
- * Create Router and display views according to routes
- */
+
 class App extends React.Component {
    componentDidMount() {
       fetch(APIUrls.add_products)
