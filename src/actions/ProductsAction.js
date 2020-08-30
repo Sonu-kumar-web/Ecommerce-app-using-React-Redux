@@ -11,10 +11,8 @@ import {
    SET_PRODUCTS_LIST,
 } from "./ActionTypes";
 import APIUrls from "../helper/APIUrls";
-/**
- * Adds product to the db
- * @param {*} product
- */
+
+//  Adds product to the db
 function ADD_PRODUCT(product) {
    return async function (dispatch) {
       try {
@@ -38,10 +36,8 @@ function ADD_PRODUCT(product) {
       }
    };
 }
-/**
- * Deletes product from db
- * @param {*} product_id
- */
+
+//  Deletes product from db
 function DELETE_PRODUCT(product) {
    return async function (dispatch) {
       try {
@@ -64,10 +60,8 @@ function DELETE_PRODUCT(product) {
       }
    };
 }
-/**
- * Update product details
- * @param {*} product
- */
+
+// Update product details
 function UPDATE_PRODUCT(product) {
    return async function (dispatch) {
       if (product.rating > 5) product.rating = 5;
@@ -95,37 +89,19 @@ function UPDATE_PRODUCT(product) {
       }
    };
 }
-/**
- * remove product from cart
- * @param {*} product_id
- */
+
+// remove product from cart
 function DELETE_CART_PRODUCT(product_id) {
    return async function (dispatch) {
       try {
-         /**
-          * uncomment for adding to cart db
-          */
-         // let options={
-         //     method:'POST',
-         //     mode:"cors",
-         //     headers:{
-         //         'content-type':'application/json'
-         //     },
-         //     body:JSON.stringify(product_id)
-         // }
-         // let json=await fetch(APIUrls.delete_cart_products,options).then(response=>response.json());
-         // console.log("deleting cart",json)
          dispatch(deleteCartProduct(product_id));
       } catch (e) {
          console.log(e);
       }
    };
 }
-/**
- * update product quantity
- * @param {*} val
- * @param {*} cart_item
- */
+
+// update product quantity
 function UPDATE_QTY(val, cart_item) {
    return async function (dispatch) {
       if (cart_item.qty + val >= 1) {
@@ -136,30 +112,14 @@ function UPDATE_QTY(val, cart_item) {
       }
 
       try {
-         /**
-          * uncomment for adding to cart db
-          */
-         // let options={
-         //     method:'POST',
-         //     mode:"cors",
-         //     headers:{
-         //         'content-type':'application/json'
-         //     },
-         //     body:JSON.stringify(cart_item)
-         // }
-         // let json=await fetch(APIUrls.update_quantity,options).then(response=>response.json());
-         // console.log(json)
          dispatch(updateQty(cart_item));
       } catch (e) {
          console.log(e);
       }
    };
 }
-/**
- * Add product to cart
- * @param {*} product
- */
 
+// Add product to cart
 function ADD_CART_PRODUCT(product) {
    return async function (dispatch, getState) {
       let state = getState();
@@ -200,10 +160,8 @@ function ADD_CART_PRODUCT(product) {
       }
    };
 }
-/**
- * Reset filter of sorting
- *
- */
+
+// Reset filter of sorting
 function RESET() {
    return async (dispatch) => {
       let json = await fetch(APIUrls.get_products).then((response) =>
@@ -213,17 +171,15 @@ function RESET() {
       dispatch(reset(json));
    };
 }
-/**
- * sort the products based on price
- */
+
+// sort the products based on price
 function SORT() {
    return {
       type: SORT_PRODUCTS,
    };
 }
-/**
- * checkout and clear cart
- */
+
+// checkout and clear cart
 function PLACE_ORDER() {
    return async (dispatch) => {
       let json = {
@@ -234,20 +190,15 @@ function PLACE_ORDER() {
    };
 }
 
-/**
- * reset for reducer
- * @param {} products
- */
+// reset for reducer
 function reset(products) {
    return {
       type: RESET_FILTER,
       products,
    };
 }
-/**
- * update qty
- * @param {*} cart
- */
+
+// update qty
 function updateQty(cart) {
    // console.log("Action", cart);
    return {
@@ -255,10 +206,8 @@ function updateQty(cart) {
       cart,
    };
 }
-/**
- * instruct reducer to add product to the views
- * @param {*} product
- */
+
+// instruct reducer to add product to the views
 function addProduct(product) {
    let message = "Product Added";
    return {
@@ -267,10 +216,8 @@ function addProduct(product) {
       message,
    };
 }
-/**
- * remove product form view
- * @param {} id
- */
+
+// remove product form view
 function deleteProduct(id) {
    let message = "Product deleted ";
    return {
@@ -279,10 +226,8 @@ function deleteProduct(id) {
       message,
    };
 }
-/**
- * update product locally
- * @param {*} product
- */
+
+// update product locally
 function updateProduct(product) {
    let message = "product updated";
    return {
@@ -291,10 +236,8 @@ function updateProduct(product) {
       message,
    };
 }
-/**
- * delete product from cart
- * @param {*} id
- */
+
+// delete product from cart
 function deleteCartProduct(id) {
    let message = "product removed from cart";
    return {
@@ -303,10 +246,8 @@ function deleteCartProduct(id) {
       message,
    };
 }
-/**
- * add product to cart
- * @param {*} cart
- */
+
+// add product to cart
 function addProductCart(cart) {
    let message = "Added to cart ";
    return {
@@ -315,19 +256,16 @@ function addProductCart(cart) {
       message,
    };
 }
-/**
- * place order
- */
+
+// place order
 function order() {
    return {
       type: CLEAR_CART,
       message: "Order placed Successfully",
    };
 }
-/**
- * instruct with no change of state
- * @param {*} message
- */
+
+// instruct with no change of state
 function Nochange(message) {
    return {
       type: "DEFAULT",
@@ -335,10 +273,7 @@ function Nochange(message) {
    };
 }
 
-/**
- * set products from server
- */
-
+// set products from server
 function setProducts(products) {
    return {
       type: SET_PRODUCTS_LIST,
