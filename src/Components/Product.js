@@ -3,6 +3,7 @@ import React from "react";
 import EditableProduct from "./EditableProduct";
 import ProductView from "./ProductView";
 import { Link } from "react-router-dom";
+
 class Product extends React.Component {
    constructor(props) {
       super(props);
@@ -11,6 +12,7 @@ class Product extends React.Component {
          hideOptions: false,
       };
    }
+
    editHandler = (e) => {
       this.setState((state) => {
          return {
@@ -18,6 +20,7 @@ class Product extends React.Component {
          };
       });
    };
+
    deleteHandler = (id) => {
       if (this.props.deleteHandler) {
          this.props.deleteHandler(id);
@@ -25,7 +28,6 @@ class Product extends React.Component {
    };
 
    saveHandler = (product) => {
-      // console.log("save",product)
       if (this.props.saveHandler) {
          this.props.saveHandler(product);
       }
