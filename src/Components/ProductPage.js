@@ -3,16 +3,15 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { Rating } from "./Product";
 import { ADD_CART_PRODUCT } from "../actions/ProductsAction";
-/**
- * Products page showing details of products
- * @param {*} props
- */
+
+// Products page showing details of products
 function ProductPage(props) {
    const { product } = props.location.state;
    function addToCart(e) {
       e.stopPropagation();
       props.dispatch(ADD_CART_PRODUCT(product));
    }
+
    return (
       <div className="product">
          <div className="product-name ">{product.product_name}</div>
@@ -41,6 +40,7 @@ function ProductPage(props) {
       </div>
    );
 }
+
 // to extract dispatch
 function mapStateToProps(state) {
    return {};
