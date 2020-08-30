@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import Cart_item from "./Cart_item";
+import CartItem from "./Cart_item";
 import { PLACE_ORDER } from "../actions/ProductsAction";
 class Cart extends React.Component {
    // checkout for placing order
@@ -17,7 +17,7 @@ class Cart extends React.Component {
                {cart.map((item, index) => {
                   cost += item.qty * item.product.product_price;
                   return (
-                     <Cart_item
+                     <CartItem
                         cart={item}
                         dispatch={this.props.dispatch}
                         key={index}
